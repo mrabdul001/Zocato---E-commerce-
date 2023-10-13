@@ -1,0 +1,20 @@
+{
+  "name": "PizzaWeb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "author": "Mr Abdul",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "serve": "node server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
