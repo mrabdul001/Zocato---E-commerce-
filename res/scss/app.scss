@@ -1,0 +1,40 @@
+@import "./variables";
+
+body {
+  font-family: "Lato", "sans-serif";
+  -webkit-font-smoothing: antialiased;
+  color: $dark;
+}
+
+nav li:last-child a {
+  background: $primaray;
+  &:hover {
+    background: $primaray-hover;
+  }
+}
+
+nav li a {
+  transition: $smooth;
+  &:hover {
+    color: $primaray;
+  }
+}
+
+section.hero {
+  background: $secondary;
+}
+.sieze {
+  background: $secondary;
+}
+
+.cart {
+  border: 2px solid $primaray;
+  color: $primaray;
+  transition: $smooth;
+
+  &:hover {
+    background: $primaray;
+    border-color: $pure;
+    color: $pure;
+  }
+}
