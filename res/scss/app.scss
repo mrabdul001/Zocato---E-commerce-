@@ -1,4 +1,6 @@
 @import "./variables";
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/mint.scss";
 
 body {
   font-family: "Lato", "sans-serif";
@@ -23,11 +25,11 @@ nav li a {
 section.hero {
   background: $secondary;
 }
-.sieze {
+.size {
   background: $secondary;
 }
 
-.cart {
+.cartBtn {
   border: 2px solid $primaray;
   color: $primaray;
   transition: $smooth;
@@ -63,4 +65,9 @@ section.login {
 
 section.register {
   min-height: calc(100vh - 206px);
+}
+
+.noty_theme__mint {
+  border-radius: 50px !important;
+  padding-left: 8px !important;
 }
