@@ -8,6 +8,8 @@ import session from "express-session";
 import { configDotenv } from "dotenv";
 import flash from "express-flash";
 import pkg from "connect-mongo";
+import passport from "passport";
+import passportInit from "./app/config/passport.js";
 const connectMongo = pkg;
 
 // const store = new MongoDbStore(session);
@@ -40,15 +42,22 @@ app.use(
     store: new connectMongo({
       client: mongoose.connection.getClient(),
     }),
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: { maxAge: 1000 * 60 * 60 * 24 },
   })
 );
+
+// passport setup
+// Passport config
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(flash());
 
 // Assets
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // golobal middleware

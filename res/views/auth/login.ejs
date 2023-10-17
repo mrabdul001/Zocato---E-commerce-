@@ -1,6 +1,7 @@
 <section class="login mt-20">
   <div class="flex w-[200px] items-center justify-center mx-auto ">
-    <div class="min-h-1/2 shadow-2xl border-gray-900 rounded-2xl">
+   <form action="/login"  method="POST">
+     <div class="min-h-1/2 shadow-2xl border-gray-900 rounded-2xl">
       <div
         class="mx-4 sm:mx-24 md:mx-34 lg:mx-56 flex items-center space-y-4 py-16  flex-col"
       >
@@ -17,16 +18,17 @@
           class="w-[300px] p-2  rounded-md border border-gray-700 focus:border-blue-700"
           placeholder="Email"
           type="email"
-          name="Email"
-          id=""
+          name="email"
         />
         <input
           class="w-full p-2 rounded-md border border-gray-700"
           placeholder="Password*"
           type="password"
           name="password"
-          id=""
         />
+          <% if (messages.error) { %>
+        <span class="text-red-500 text-sm"><%= messages.error  %> </span>   
+       <% } %> 
      <button class="px-6 py-2 rounded-full text-white mt-4 font-bold btn-primary w-[300px]">Login</button>
 
         <p>
@@ -35,5 +37,6 @@
         </p>
       </div>
     </div>
+   </form>
   </div>
 </section>
